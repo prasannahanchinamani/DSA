@@ -1,4 +1,5 @@
-package dsa.collections_list;
+package dsa.collections_linkedlist;
+
 import dsa.linkedlist.Node;
 
 public class LinkedListCycleDetector {
@@ -37,7 +38,7 @@ public class LinkedListCycleDetector {
 
         Node cycleStart = detector.detectCycle(head);
         if (cycleStart != null) {
-            System.out.println("Cycle starts at node with value: " + cycleStart.val);
+            System.out.println("Cycle starts at node with value: " + cycleStart.data);
         } else {
             System.out.println("No cycle detected.");
         }

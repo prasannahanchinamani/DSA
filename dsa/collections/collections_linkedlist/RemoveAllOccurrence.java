@@ -1,18 +1,18 @@
-package dsa.collections_list;
+package dsa.collections_linkedlist;
 
 import dsa.linkedlist.Node;
 
 import java.util.LinkedList;
 
-public class RemoveAllOcuuarnce {
+public class RemoveAllOccurrence {
     public static Node removeAlloccurance(Node head, int value) {
-        while (head != null && head.val.equals(value)) {
+        while (head != null && head.data.equals(value)){
             head = head.next;
         }
         Node current = head;
         Node prev = null;
         while (current != null) {
-            if (current.val.equals(value)) {
+            if (current.data.equals(value)) {
                 prev.next = current.next;
                 current = current.next;
             } else {
@@ -26,14 +26,14 @@ public class RemoveAllOcuuarnce {
     public static void displayList(Node head) {
         Node curr = head;
         while (curr != null) {
-            System.out.print(curr.val + " -> ");
+            System.out.print(curr.data + " -> ");
             curr = curr.next;
         }
         System.out.println("END");
     }
 
-    public static void removeoccuancebuiltin(LinkedList<Integer> list, int value) {
-        list.removeIf(n -> n.equals(value));
+    public static void removeOccurrenceBuiltin(LinkedList<Integer> list, int value) {
+        list.removeIf(n -> n == value);
     }
 
     public static void main(String[] args) {
@@ -45,11 +45,11 @@ public class RemoveAllOcuuarnce {
 
         System.out.println("Original list:");
         displayList(head);
+
         head = removeAlloccurance(head, 2);
-        System.out.println();
-        System.out.println("List after removing all occurrences of 2:");
+        System.out.println("\nList after removing all occurrences of 2:");
         displayList(head);
-        //
+
         LinkedList<Integer> list = new LinkedList<>();
         list.add(2);
         list.add(2);
@@ -59,7 +59,7 @@ public class RemoveAllOcuuarnce {
 
         System.out.println("Original list: " + list);
         int valueToRemove = 2;
-        removeoccuancebuiltin(list,valueToRemove);
+        removeOccurrenceBuiltin(list, valueToRemove);
         System.out.println("List after removing all occurrences of " + valueToRemove + ": " + list);
     }
 }

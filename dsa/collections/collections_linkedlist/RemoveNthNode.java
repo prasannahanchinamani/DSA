@@ -1,4 +1,4 @@
-package dsa.collections_list;
+package dsa.collections_linkedlist;
 
 import java.util.LinkedList;
 
